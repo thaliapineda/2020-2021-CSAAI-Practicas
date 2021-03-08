@@ -11,15 +11,6 @@ body  {
 
 }
 
-/* Propiedades de la caja del cuerpo */
-body {
-    padding: 5px; /* relleno */
-    margin: 10px; /* Margen */
-    border: solid;
-    border-color: lightgoldenrodyellow;
-    width: 100%; height: 100%;
-}
-
 /* Propiedades de la caja del encabezado h1 */
 h1{
     font-family: fantasy;
@@ -88,7 +79,7 @@ h1{
     -webkit-border-radius: 35px 0px 35px 0px;
     border: 2px solid lightyellow;
 
-    width: 98%; height: 600px;
+    width: 100%; height: 600px;
 
     img {width: 30px; height: 25px;}
 }
