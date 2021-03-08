@@ -1,0 +1,41 @@
+/* Esto son comentarios en css */
+body  {
+    background-image: url(mapa1.jpg);
+    background-image: no-repeat;
+    background-image: fixed;
+    background-image: center;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+/* Propiedades de la caja del cuerpo */
+body {
+    padding: 5px; /* relleno */
+    margin: 10px; /* Margen */
+    border: solid;
+    border-color: lightgoldenrodyellow;
+}
+
+/* Propiedades de la caja del encabezado h1 */
+h1{
+    font-family: fantasy;
+    color:black;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+    background-color: lightyellow;
+    margin: 0 0 25px;
+    overflow: hidden;
+    padding: 20px; /* Relleno */
+    border-radius: 35px 0px 35px 0px;
+    -moz-border-radius: 35px 0px 35px 0px;
+    -webkit-border-radius: 35px 0px 35px 0px;
+    border: 2px solid lightyellow;
+}
+
+
+.foto {
+    left: 25px;
+}
