@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo 3</title>
+// Esto son comentarios en Javascript
+// MI primer programa javascript!!
 
-    <!-- Ejecutar el código js situado en un fichero externo -->
-    <script src="Ej-03.js"></script>
-</head>
-<body>
-    <p>Esto es un párrafo del ejemplo 3</p>
-</body>
-</html>
+//-- Imprimir tres mensajes en la consola
+console.log("Estoy fuera del HTML");
+console.log("Se recomienda hacerlo así");
+console.log("------");
