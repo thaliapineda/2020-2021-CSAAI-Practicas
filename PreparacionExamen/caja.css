@@ -5,7 +5,11 @@ body {
     border: solid;
     border-color: red;
   }
-  
+
+/* Propiedades de de la caja del encabezado */
+h1{
+    text-align: center;
+}
   /*  Propiedades de la caja del párrafo */
   p {
     margin: 10px;
