@@ -28,12 +28,13 @@ h1{
     border: 2px solid lightyellow;
 }
 
-.Foto{
+.Cuadro{
     font-family: fantasy;
     color:black;
     font-size: 15px;
     font-weight: 300;
-    background-color: lightyellow;
+    background-color: rgba(255, 255, 224, 0.76);
+    
     margin: 0 0 25px;
     overflow: hidden;
     padding: 20px; /* Relleno */
@@ -46,8 +47,26 @@ h1{
     text-align: center;
     
     float:right;
+    
 
 }
+
+.imagen{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.audio{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
 .Sobre-mi{
     
         font-family: fantasy;
