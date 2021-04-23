@@ -70,6 +70,16 @@ boton9.onclick = () => {
   display.innerHTML += boton9.value;
 }
 
+// -- Insertar digito 0
+boton0.onclick = () => {
+  display.innerHTML += boton0.value;
+}
+
+// -- Insertar simbolo .
+botonpunto.onclick = () => {
+  display.innerHTML += botonpunto.value;
+}
+
 
 //-- Insertar simbolo de sumar
 suma.onclick = () => {
@@ -78,17 +88,17 @@ suma.onclick = () => {
 
 //-- Insertar simbolo de restar
 resta.onclick = () => {
-  display.innerHTML -= resta.value;
+  display.innerHTML += resta.value;
 }
 
 //-- Insertar simbolo de multiplicar
-multiplica.onclick = () => {
-  display.innerHTML *= multiplicar.value;
+multiplicacion.onclick = () => {
+  display.innerHTML += multiplicacion.value;
 }
 
 //-- Insertar simbolo de dividir
 division.onclick = () => {
-  display.innerHTML /= division.value;
+  display.innerHTML += division.value;
 }
 
 //-- Evaluar la expresion
