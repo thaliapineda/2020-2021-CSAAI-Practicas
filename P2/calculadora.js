@@ -14,6 +14,9 @@ boton8 = document.getElementById("boton8")
 boton9 = document.getElementById("boton9")
 
 suma = document.getElementById("suma")
+resta = document.getElementById("resta")
+multiplicacion = document.getElementById("multiplicacion")
+division = document.getElementById("division")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 
@@ -71,6 +74,21 @@ boton9.onclick = () => {
 //-- Insertar simbolo de sumar
 suma.onclick = () => {
   display.innerHTML += suma.value;
+}
+
+//-- Insertar simbolo de restar
+resta.onclick = () => {
+  display.innerHTML -= resta.value;
+}
+
+//-- Insertar simbolo de multiplicar
+multiplica.onclick = () => {
+  display.innerHTML *= multiplicar.value;
+}
+
+//-- Insertar simbolo de dividir
+division.onclick = () => {
+  display.innerHTML /= division.value;
 }
 
 //-- Evaluar la expresion
