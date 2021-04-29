@@ -34,8 +34,6 @@ for (let i = 0; i < LADRILLO.F; i++) {
     }
 }
 
-ladrillos[0][1].visible = false;
-
 
 //-- Dibujar ladrillos
 for (let i = 0; i < LADRILLO.F; i++) {
