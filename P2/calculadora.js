@@ -3,102 +3,51 @@ console.log("Ejecutando JS...");
 
 //-- Elementos de la interfaz de la calculadora
 display = document.getElementById("display")
-boton1 = document.getElementById("boton1")
-boton2 = document.getElementById("boton2")
-boton3 = document.getElementById("boton3")
-boton4 = document.getElementById("boton4")
-boton5 = document.getElementById("boton5")
-boton6 = document.getElementById("boton6")
-boton7 = document.getElementById("boton7")
-boton8 = document.getElementById("boton8")
-boton9 = document.getElementById("boton9")
-
-suma = document.getElementById("suma")
-resta = document.getElementById("resta")
-multiplicacion = document.getElementById("multiplicacion")
-division = document.getElementById("division")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 
-//-- Funciones de retrollamada de los botones
-//-- Cada vez que se aprieta un boton se actua
-//-- sobre la cadena: añadiendo digito, operador +
-//-- poniendo a cero o evaluando la expresión
+//-- Números
+let numeros = document.getElementClassName("numero")
+console.log(numeros)
 
-// -- Insertar digito 1
-boton1.onclick = () => {
-  display.innerHTML += boton1.value;
+//-- Operaciones
+let operaciones = document.getElementsByClassName("operacion")
+console.log(operaciones)
+
+//-- Estados
+const ESTADOS = {
+  INICIO: 0,
+  PRIMERNUMERO: 1,
+  ACCION: 2,
+  SEGUNDONUMERO_INICIO: 3,
+  SEGUNDONUMERO: 4,
 }
 
-//-- Insertar digito 2
-boton2.onclick = () => {
-  display.innerHTML += boton2.value;
+//-- Inicializamos los estados
+let estados = ESTADOS.INICIO;
+
+//-- Display a 0
+function numero(boton) {
+  if(display.innerHTML == "0"){
+    display.innerHTML = boton.value;
+  }
+  else{
+    display-innerHTML += boton.value
+  }
 }
 
-// -- Insertar digito 3
-boton3.onclick = () => {
-  display.innerHTML += boton3.value;
+//-- Bucle que lee cada 'digito' que se va pulsando
+for (i = 0; i < numeros.length; i++){
+  numeros[i].onclick = (ev)=>{
+    number(ev.target);
+  }
 }
 
-//-- Insertar digito 4
-boton4.onclick = () => {
-  display.innerHTML += boton4.value;
-}
-
-// -- Insertar digito 5
-boton5.onclick = () => {
-  display.innerHTML += boton5.value;
-}
-
-//-- Insertar digito 6
-boton6.onclick = () => {
-  display.innerHTML += boton6.value;
-}
-
-// -- Insertar digito 7
-boton7.onclick = () => {
-  display.innerHTML += boton7.value;
-}
-
-//-- Insertar digito 8
-boton8.onclick = () => {
-  display.innerHTML += boton8.value;
-}
-
-// -- Insertar digito 9
-boton9.onclick = () => {
-  display.innerHTML += boton9.value;
-}
-
-// -- Insertar digito 0
-boton0.onclick = () => {
-  display.innerHTML += boton0.value;
-}
-
-// -- Insertar simbolo .
-botonpunto.onclick = () => {
-  display.innerHTML += botonpunto.value;
-}
-
-
-//-- Insertar simbolo de sumar
-suma.onclick = () => {
-  display.innerHTML += suma.value;
-}
-
-//-- Insertar simbolo de restar
-resta.onclick = () => {
-  display.innerHTML += resta.value;
-}
-
-//-- Insertar simbolo de multiplicar
-multiplicacion.onclick = () => {
-  display.innerHTML += multiplicacion.value;
-}
-
-//-- Insertar simbolo de dividir
-division.onclick = () => {
-  display.innerHTML += division.value;
+//-- Bucle que lee cada 'operacion' que se ha pulsado
+for (i=0; i<operaciones.length; i++){
+  operaciones[i].onclick = (ev)=>{
+    operador(ev.target);
+  }
 }
 
 //-- Evaluar la expresion
@@ -106,7 +55,40 @@ igual.onclick = () => {
   display.innerHTML = eval(display.innerHTML);
 }
 
-//-- Poner a cero la expresion
+
+
+//-- Poner a cero la expresion (AC) - Borrar todo
 clear.onclick = () => {
   display.innerHTML = "0";
+  estados = ESTADOS.INICIO;
+}
+
+//-- Ha llegado un dígito
+function number(num)
+{
+  //-- Segun el estado hacemos una cosa u otra
+  if (estados == ESTADOS.INICIO) {
+    display.innerHTML = num.value;
+    estados = ESTADOS.PRIMERNUMERO;
+  } else if (estados == ESTADOS.PRIMERNUMERO){
+    display.innerHTML += num.value;
+  } else if (estados == ESTADOS.ACCION){
+    display.innerHTML += num.value;
+    estados = ESTADOS.SEGUNDONUMERO_INICIO;
+  } else if (estados == ESTADOS.SEGUNDONUMERO_INICIO){
+    display.innerHTML += num.value;
+    estados = ESTADOS.SEGUNDONUMERO;
+  } else if (estados == ESTADOS.SEGUNDONUMERO){
+    display.innerHTML += num.value;
+  }
+}
+
+//-- Ha llegado un operador - COMPROBACIÓN
+function operador (oper)
+{
+  //-- Segun el estado hacemos una cosa u otra
+  if (estado != ESTADOS.ACCION){
+    display.innerHTML += oper.value;
+    estados = ESTADOS.ACCION;
+  }
 }

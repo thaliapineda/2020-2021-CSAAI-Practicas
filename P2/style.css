@@ -1,0 +1,15 @@
+/* Esto son comentarios en css */
+body  {
+    background-image: url(fondo.jpg);
+    background-image: no-repeat;
+    background-image: fixed;
+    background-image: center;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: auto; height: auto;
+}
+
+h1{
+    text-align: ;
+}
