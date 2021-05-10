@@ -120,20 +120,5 @@ deslizador_verde.oninput = () => {
   ctx.putImageData(imgData, 0, 0);
 }
 
-const filtro_colores = document.getElementById('colores');
-filtro_colores.onclick = () => {
-  document.getElementById('rangos').style.display = 'block';
-  console.log("Deslizadores");
-  ctx.drawImage(img, 0,0);
-    deslizador_rojo.oninput = () => {
-       colour();
-    }
-    deslizador_azul.oninput = () => {
-       colour();
-    }
-    deslizador_verde.oninput = () => {
-       colour();
-    }
-}
 
 console.log("Fin...");
