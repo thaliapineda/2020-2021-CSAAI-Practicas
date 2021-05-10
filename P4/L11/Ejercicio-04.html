@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejercicio-04.css">
+    <script src="Ejercicio-04.js" defer></script>
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h1> · Filtado de imágenes · </h1>
+    
+    <canvas id="canvas"></canvas>
+    <img src="fortnite.jpg" id="imagesrc">
+
+
+    <button id="colores"> · Filtro colores ·</button>
+    <button id="gris"> · Filtro gris ·</button>
+    <div id="rangos">
+    <p>Establece el umbral de rojo:</p>
+    <input type="range" id="deslizador_rojo" min="0" max="255" value="255"/>
+    <p id="range_value_rojo">00</p>
+
+    <p>Establece el umbral de azul:</p>
+    <input type="range" id="deslizador_azul" min="0" max="255" value="255"/>
+    <p id="range_value_azul">00</p>
+
+    <p>Establece el umbral de verde:</p>
+    <input type="range" id="deslizador_verde" min="0" max="255" value="255"/>
+    <p id="range_value_verde">00</p>
+    </div>
+
+</body>
+</html>
