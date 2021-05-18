@@ -60,7 +60,6 @@ btn_video1.onclick = () => {
     directo.src = video1.src;
     directo.currentTime = video1.currentTime;
     directo.play();
-    directo.poster=null;
 };
 
 //-- Botón de Selección de la cámara 2
@@ -68,5 +67,4 @@ btn_video2.onclick = () => {
     directo.src = video2.src;
     directo.currentTime = video2.currentTime;
     directo.play();
-    directo.poster=null;
 };

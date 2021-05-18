@@ -45,9 +45,7 @@ btn_test.onclick = () => {
 
 //-- Botón de Selección de la cámara 1
 btn_video1.onclick = () => {
-  
     directo.src = video1.src;
     directo.currentTime = video1.currentTime;
     directo.play();
-  
 };
