@@ -58,7 +58,7 @@ btn_src_off.onclick = () => {
     video2.src= TEST_IMAGE_URL;
   
     directo.poster = TEST_IMAGE_URL;
-    
+    directo.src = null;
   };
 
 //-- Botón de Test
