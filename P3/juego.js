@@ -50,6 +50,7 @@ for (let i = 0; i < LADRILLO.F; i++) {
     }
 }
 
+//-- Bola
 var RadioBola = 9;
 var x = canvas.width/2;
 var y = canvas.height-30;
@@ -79,3 +80,17 @@ function MoverBola() {
 }
 
 setInterval(MoverBola, 10);
+
+
+//-- Raqueta
+var AlturaRaqueta = 9;
+var AnchoRaqueta = 70;
+var RaquetaX = (canvas.width-AnchoRaqueta)/2;
+
+function RaquetaDibujar() {
+  ctx.beginPath();
+  ctx.rect(RaquetaX, canvas.height-AlturaRaqueta, AnchoRaqueta, AlturaRaqueta);
+  ctx.fillStyle = "orange";
+  ctx.fill();
+  ctx.closePath();
+}
