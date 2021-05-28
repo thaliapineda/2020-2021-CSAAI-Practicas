@@ -1,14 +1,14 @@
 const canvas = document.getElementById("canvas");
 
-canvas.width = 300;
-canvas.height = 100;
+canvas.width = 500;
+canvas.height = 300;
 
 const ctx = canvas.getContext("2d");
 
 //-- Constantes de los ladrillos
 const LADRILLO = {
-    F: 2,  // Filas
-    C: 3,  // Columnas
+    F: 5,  // Filas
+    C: 9,  // Columnas
     w: 30,
     h: 20,
     origen_x: 0,
@@ -43,9 +43,11 @@ for (let i = 0; i < LADRILLO.F; i++) {
       if (ladrillos[i][j].visible) {
         ctx.beginPath();
         ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.w, LADRILLO.h);
-        ctx.fillStyle = 'blue';
+        ctx.fillStyle = 'yellow';
         ctx.fill();
         ctx.closePath();
       }
     }
 }
+
+
