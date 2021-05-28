@@ -50,6 +50,7 @@ for (let i = 0; i < LADRILLO.F; i++) {
     }
 }
 
+var RadioBola = 9;
 var x = canvas.width/2;
 var y = canvas.height-30;
 var dx = 2;
@@ -66,6 +67,13 @@ function DibujarBola() {
 function MoverBola() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   DibujarBola();
+
+  if(x + dx > canvas.width-RadioBola || x + dx < RadioBola){
+    dx = -dx;
+  }
+  if(y + dy > canvas.height-RadioBola || y + dy < RadioBola){
+    dy = -dy;
+  }
   x += dx;
   y += dy;
 }
