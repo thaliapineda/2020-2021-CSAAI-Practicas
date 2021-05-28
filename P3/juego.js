@@ -65,9 +65,9 @@ function DibujarBola() {
 
 function MoverBola() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawBall();
+  DibujarBola();
   x += dx;
   y += dy;
 }
 
-setInterval(draw, 10);
+setInterval(MoverBola, 10);
