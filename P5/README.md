@@ -1,3 +1,4 @@
  # Práctica 5
-Funcionamiento básico./n
+Funcionamiento básico.
+
 He añadido tres videos desde un repositorio propio.
