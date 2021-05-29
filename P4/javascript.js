@@ -11,12 +11,16 @@ const ctx = canvas.getContext('2d');
 const deslizador_rojo = document.getElementById('deslizador_rojo');
 //-- Color azul
 const deslizador_azul = document.getElementById('deslizador_azul');
+//-- Color verde
+const deslizador_verde = document.getElementById('deslizador_verde');
 
 //-- Valor del deslizador
 //-- Color rojo
 const range_value_rojo = document.getElementById('range_value_rojo');
 //-- Color azul
 const range_value_azul = document.getElementById('range_value_azul');
+//-- Color verde
+const range_value_verde = document.getElementById('range_value_verde');
 
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que

@@ -1,5 +1,6 @@
 #imagesrc {
-    display:none;
+    display: block;
+    margin: auto;
   }
 
 h1{
