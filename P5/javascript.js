@@ -37,7 +37,6 @@ video3.poster = TEST_IMAGE_URL;
 btn_src_on.onclick = () => {
  
   //-- Establecer la fuente de la cámara 1
-  //-- video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
   video1.src="https://github.com/thaliapineda/Videos/raw/main/Fortnite_Cap%C3%ADtulo2_Temporada1.mp4";
   video2.src="https://github.com/thaliapineda/Videos/raw/main/Fortnite_Cap%C3%ADtulo2_Temporada2.mp4";
   video3.src="https://github.com/thaliapineda/Videos/raw/main/Fortnite_Cap%C3%ADtulo2_Temporada3.mp4";
