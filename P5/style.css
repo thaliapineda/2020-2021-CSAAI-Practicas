@@ -18,11 +18,67 @@ h1{
     border: 2px solid lightyellow;
 }
 
-.directo{
+.Emision{
     text-align: center;
 }
 
-button{
+.Canales1{
+    text-align: center;
+}
+
+.Video1{
+    display: block;
+}
+
+.Botones{
+    text-align: center;
+}
+#btn_video1{
+    margin: 2px;
+    padding: 20px 20px;
+    font-size: 20px;
+    border-radius: 35px 35px 35px 35px;
+    -moz-border-radius: 35px 35px 35px 35px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+    background-color: rgba(219, 219, 7, 0.76);
+}
+#btn_video2{
+    margin: 2px;
+    padding: 20px 20px;
+    font-size: 20px;
+    border-radius: 35px 35px 35px 35px;
+    -moz-border-radius: 35px 35px 35px 35px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+    background-color: rgba(219, 219, 7, 0.76);
+}
+#btn_video3{
+    margin: 2px;
+    padding: 20px 20px;
+    font-size: 20px;
+    border-radius: 35px 35px 35px 35px;
+    -moz-border-radius: 35px 35px 35px 35px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+    background-color: rgba(219, 219, 7, 0.76);
+}
+#btn_src_on{
+    margin: 2px;
+    padding: 20px 20px;
+    font-size: 20px;
+    border-radius: 35px 35px 35px 35px;
+    -moz-border-radius: 35px 35px 35px 35px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+    background-color: rgba(219, 219, 7, 0.76);
+}
+#btn_src_off{
+    margin: 2px;
+    padding: 20px 20px;
+    font-size: 20px;
+    border-radius: 35px 35px 35px 35px;
+    -moz-border-radius: 35px 35px 35px 35px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+    background-color: rgba(219, 219, 7, 0.76);
+}
+#btn_test{
     margin: 2px;
     padding: 20px 20px;
     font-size: 20px;
