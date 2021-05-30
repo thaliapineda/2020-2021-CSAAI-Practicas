@@ -38,6 +38,9 @@ for(columnas=0; columnas<LadrillosColumna; columnas++){
 //-- Puntuación
 var puntuacion = 0;
 
+//-- Vidas
+var vidas = 3;
+
 //-- Saber que flecha se esta pulsando
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -87,6 +90,13 @@ function Puntuacion(){
   ctx.font = "18px Times";
   ctx.fillStyle = "orange";
   ctx.fillText("Puntuación: " + puntuacion, 8, 20);
+}
+
+//-- Contador de vidas
+function Vidas(){
+  ctx.font = "18px Times";
+  ctx.fillStyle = "orange";
+  ctx.fillText("Vidas: " + vidas, canvas.width-65, 20);
 }
 
 
@@ -148,8 +158,18 @@ function EliminarTrayectoria() {
       dy = -dy;
     }
     else{
-      alert("Game over :(");
-      document.location.reload();
+      vidas--;
+      if(!vidas){
+        alert("Game over :(");
+        document.location.reload();
+      }
+      else{
+        x = canvas.width/2;
+        y = canvas.height-30;
+        dx = 3;
+        dy = -3;
+        Raqueta_EjeX = (canvas.width-AnchuraRaqueta)/2;
+      }
     }
   }
   if(FlechaDerecha && Raqueta_EjeX < canvas.width-AnchuraRaqueta){
