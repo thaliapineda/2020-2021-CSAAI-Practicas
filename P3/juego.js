@@ -17,6 +17,24 @@ var Raqueta_EjeX = (canvas.width-AnchuraRaqueta)/2;
 var FlechaDerecha = false;
 var FlechaIzquierda = false;
 
+//-- Ladrillos
+var LadrillosColumna = 9;
+var LadrillosFila = 5;
+var AnchuraLadrillos = 75;
+var AlturaLadrillos = 20;
+var PaddingLadrillos = 10;
+var OffsetTopLadrillos = 30;
+var OffsetIzquierdaLadrillos = 30;
+
+//-- Matriz para almacenar ladrillos
+var ladrillos = [];
+for(columnas=0; columnas<ContadorLadrillosColumnas; columnas++){
+  ladrillos[columnas] = [];
+  for(filas=0; filas<ContadorLadrillosFilas; filas++){
+    ladrillos[columnas][filas] = {x: 0, y: 0};
+  }
+}
+
 //-- Saber que flecha se esta pulsando
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -60,11 +78,30 @@ function DibujarRaqueta(){
   ctx.closePath();
 }
 
+//-- Creamos una funcion para dibujar los ladrillos
+function DibujarLadrillos(){
+  for(columnas=0; columnas<ContadorLadrillosColumnas; columnas++){
+    for(filas=0; filas<ContadorLadrillosFilas; filas++){
+      var ladrillosX = (columnas*(AnchuraLadrillos+PaddingLadrillos))+OffsetIzquierdaLadrillos;
+      var ladrillosY = (filas*(AlturaLadrillos+PaddingLadrillos))+OffsetTopLadrillos;
+      ladrillos[columnas][filas].x = ladrillosX;
+      ladrillos[columnas][filas].y = ladrillosY;
+      ctx.beginPath();
+      ctx.rect(ladrillosX, ladrillosY, AnchuraLadrillos, AlturaLadrillos);
+      ctx.fillStyle = "orange";
+      ctx.fill();
+      ctx.closePath();
+    }
+  }
+}
+
 //-- Creamos una funcion para que solo se vea la bola y no toda la trayecoria
 function EliminarTrayectoria() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  DibujarLadrillos();
   DibujarBola();
   DibujarRaqueta();
+
 
   if(x + dx > canvas.width-RadioBola || x + dx < RadioBola){
     dx = -dx;
