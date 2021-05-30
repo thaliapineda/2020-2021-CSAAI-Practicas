@@ -17,6 +17,30 @@ var Raqueta_EjeX = (canvas.width-AnchuraRaqueta)/2;
 var FlechaDerecha = false;
 var FlechaIzquierda = false;
 
+//-- Saber que flecha se esta pulsando
+document.addEventListener("teclapulsada", TeclaPulsada, false);
+document.addEventListener("teclalevantada", TeclaLevantada, false);
+
+//-- Creamos la funcion tecla pulsada
+function TeclaPulsada(e){
+  if(e.tecla == 39){
+    FlechaDerecha = true;
+  }
+  else if(e.tecla == 37){
+    FlechaIzquierda = true;
+  }
+}
+
+//-- Creamos la funcion tecla levantada
+function TeclaLevantada(e){
+  if(e.tecla == 39){
+    FlechaDerecha = false;
+  }
+  else if(e.tecla == 37){
+    FlechaIzquierda = false;
+  }
+}
+
 
 //-- Creamos una funcion para dibujar la bola y hacer que se mueva
 function DibujarBola() {
@@ -57,30 +81,6 @@ function EliminarTrayectoria() {
 
   x += dx;
   y += dy;
-}
-
-//-- Saber que flecha se esta pulsando
-document.addEventListener("teclapulsada", TeclaPulsada, false);
-document.addEventListener("teclalevantada", TeclaLevantada, false);
-
-//-- Creamos la funcion tecla pulsada
-function TeclaPulsada(e){
-  if(e.tecla == 39){
-    FlechaDerecha = true;
-  }
-  else if(e.tecla == 37){
-    FlechaIzquierda = true;
-  }
-}
-
-//-- Creamos la funcion tecla levantada
-function TeclaLevantada(e){
-  if(e.tecla == 39){
-    FlechaDerecha = false;
-  }
-  else if(e.tecla == 37){
-    FlechaIzquierda = false;
-  }
 }
 
 setInterval(EliminarTrayectoria, 10);
