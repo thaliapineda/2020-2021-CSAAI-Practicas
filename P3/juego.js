@@ -5,6 +5,35 @@ canvas.height = 300;
 
 const ctx = canvas.getContext("2d");
 
+//-- Bola
+var RadioBola = 9;
+var x = canvas.width/2;
+var y = canvas.height-30;
+var dx = 2;
+var dy = -2;
+
+//-- Raqueta
+var AlturaRaqueta = 9;
+var AnchoRaqueta = 70;
+var RaquetaX = (canvas.width-AnchoRaqueta)/2;
+
+//-- Botones
+var BotonDerecho = false;
+var BotonIzquierdo = false;
+
+//-- Pulsar teclas
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
+
+function keyDownHandler(e){
+  if(e.keyCode == 39){
+    rightPressed = false;
+  }
+  else if(e.keyCode == 37){
+    leftPressed == false;
+  }
+}
+
 //-- Constantes de los ladrillos
 const LADRILLO = {
     F: 5,  // Filas
@@ -50,12 +79,7 @@ for (let i = 0; i < LADRILLO.F; i++) {
     }
 }
 
-//-- Bola
-var RadioBola = 9;
-var x = canvas.width/2;
-var y = canvas.height-30;
-var dx = 2;
-var dy = -2;
+
 
 function DibujarBola() {
   ctx.beginPath();
@@ -64,6 +88,15 @@ function DibujarBola() {
   ctx.fill();
   ctx.closePath();
 }
+
+function RaquetaDibujar() {
+  ctx.beginPath();
+  ctx.rect(RaquetaX, canvas.height-AlturaRaqueta, AnchoRaqueta, AlturaRaqueta);
+  ctx.fillStyle = "orange";
+  ctx.fill();
+  ctx.closePath();
+}
+
 
 function MoverBola() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -75,22 +108,15 @@ function MoverBola() {
   if(y + dy > canvas.height-RadioBola || y + dy < RadioBola){
     dy = -dy;
   }
+  if(rightPressed && RaquetaX < canvas.width-AnchoRaqueta){
+    RaquetaX += 7;
+  }
+  else(leftPressed && RaquetaX > 0){
+    RaquetaX -= 7;
+  }
+  
   x += dx;
   y += dy;
 }
 
 setInterval(MoverBola, 10);
-
-
-//-- Raqueta
-var AlturaRaqueta = 9;
-var AnchoRaqueta = 70;
-var RaquetaX = (canvas.width-AnchoRaqueta)/2;
-
-function RaquetaDibujar() {
-  ctx.beginPath();
-  ctx.rect(RaquetaX, canvas.height-AlturaRaqueta, AnchoRaqueta, AlturaRaqueta);
-  ctx.fillStyle = "orange";
-  ctx.fill();
-  ctx.closePath();
-}
