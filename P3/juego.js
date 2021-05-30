@@ -11,7 +11,7 @@ var dy = -2;
 //-- Creamos una funcion para dibujar la bola y hacer que se mueva
 function DibujarBola() {
   ctx.beginPath();
-  ctx.arc(x, y, 10, 0, Math.PI*2);
+  ctx.arc(x, y, RadioBola, 0, Math.PI*2);
   ctx.fillStyle = "orange";
   ctx.fill();
   ctx.closePath;
@@ -21,6 +21,14 @@ function DibujarBola() {
 function EliminarTrayectoria() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   DibujarBola();
+
+  if(x + dx > canvas.width-RadioBola || x + dx < RadioBola){
+    dx = -dx;
+  }
+  if(y + dy > canvas.height-RadioBola || y + dy < RadioBola){
+    dy = -dy;
+  }
+  
   x += dx;
   y += dy;
 }
