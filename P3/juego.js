@@ -28,9 +28,9 @@ var OffsetIzquierdaLadrillos = 30;
 
 //-- Matriz para almacenar ladrillos
 var ladrillos = [];
-for(columnas=0; columnas<ContadorLadrillosColumnas; columnas++){
+for(columnas=0; columnas<LadrillosColumna; columnas++){
   ladrillos[columnas] = [];
-  for(filas=0; filas<ContadorLadrillosFilas; filas++){
+  for(filas=0; filas<LadrillosFila; filas++){
     ladrillos[columnas][filas] = {x: 0, y: 0};
   }
 }
@@ -80,8 +80,8 @@ function DibujarRaqueta(){
 
 //-- Creamos una funcion para dibujar los ladrillos
 function DibujarLadrillos(){
-  for(columnas=0; columnas<ContadorLadrillosColumnas; columnas++){
-    for(filas=0; filas<ContadorLadrillosFilas; filas++){
+  for(columnas=0; columnas<LadrillosColumna; columnas++){
+    for(filas=0; filas<LadrillosFila; filas++){
       var ladrillosX = (columnas*(AnchuraLadrillos+PaddingLadrillos))+OffsetIzquierdaLadrillos;
       var ladrillosY = (filas*(AlturaLadrillos+PaddingLadrillos))+OffsetTopLadrillos;
       ladrillos[columnas][filas].x = ladrillosX;
