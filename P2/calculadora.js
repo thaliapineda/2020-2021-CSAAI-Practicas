@@ -33,7 +33,7 @@ function tecla(boton) {
     display.innerHTML = boton.value;
   }
   else{
-    display-innerHTML += boton.value
+    display.innerHTML += boton.value;
   }
 }
 
