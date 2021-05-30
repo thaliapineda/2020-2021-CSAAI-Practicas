@@ -48,6 +48,9 @@ h1{
     width: 500px;
 }
 
+#Botones{
+    margin-top: -586px;
+}
 #colores{
     margin: 2px;
     padding: 20px 20px;
@@ -56,6 +59,8 @@ h1{
     -moz-border-radius: 35px 35px 35px 35px;
     -webkit-border-radius: 35px 35px 35px 35px;
     background-color: rgba(219, 219, 7, 0.76);
+    margin-left: 580px;
+    margin-top: -865px;
 }
 #gris{
     margin: 2px;
@@ -65,4 +70,8 @@ h1{
     -moz-border-radius: 35px 35px 35px 35px;
     -webkit-border-radius: 35px 35px 35px 35px;
     background-color: rgba(219, 219, 7, 0.76);
+}
+
+#rangos{
+    margin-left: 580px;
 }
