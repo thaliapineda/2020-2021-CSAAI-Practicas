@@ -57,11 +57,16 @@ function keyDownHandler(e) {
 
 //-- Creamos la funcion tecla levantada
 function keyUpHandler(e) {
+  if(e.keyCode == 32){
+    console.log("Espacio");
+    RadioBola.dx = 3*(Math.random() * 2-1);
+    RadioBola.dy = -3;
+  }
   if(e.keyCode == 39) {
-      FlechaDerecha = false;
+    FlechaDerecha = false;
   }
   else if(e.keyCode == 37) {
-      FlechaIzquierda = false;
+    FlechaIzquierda = false;
   }
 }
 
