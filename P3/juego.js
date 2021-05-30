@@ -2,15 +2,15 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
 //-- Bola
-var RadioBola = 9;
+var RadioBola = 10;
 var x = canvas.width/2;
 var y = canvas.height-30;
 var dx = 2;
 var dy = -2;
 
 //-- Raqueta
-var AnchuraRaqueta = 70;
-var AlturaRaqueta = 9;
+var AnchuraRaqueta = 75;
+var AlturaRaqueta = 10;
 var Raqueta_EjeX = (canvas.width-AnchuraRaqueta)/2;
 
 //-- Controles raqueta
@@ -18,26 +18,26 @@ var FlechaDerecha = false;
 var FlechaIzquierda = false;
 
 //-- Saber que flecha se esta pulsando
-document.addEventListener("teclapulsada", TeclaPulsada, false);
-document.addEventListener("teclalevantada", TeclaLevantada, false);
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
 
 //-- Creamos la funcion tecla pulsada
-function TeclaPulsada(e){
-  if(e.tecla == 39){
-    FlechaDerecha = true;
+function keyDownHandler(e) {
+  if(e.keyCode == 39) {
+      FlechaDerecha = true;
   }
-  else if(e.tecla == 37){
-    FlechaIzquierda = true;
+  else if(e.keyCode == 37) {
+      FlechaIzquierda = true;
   }
 }
 
 //-- Creamos la funcion tecla levantada
-function TeclaLevantada(e){
-  if(e.tecla == 39){
-    FlechaDerecha = false;
+function keyUpHandler(e) {
+  if(e.keyCode == 39) {
+      FlechaDerecha = false;
   }
-  else if(e.tecla == 37){
-    FlechaIzquierda = false;
+  else if(e.keyCode == 37) {
+      FlechaIzquierda = false;
   }
 }
 
