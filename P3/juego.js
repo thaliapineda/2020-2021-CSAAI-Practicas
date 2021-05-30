@@ -76,7 +76,7 @@ function ColisionLadrillos(){
           colision.status = 0;
           puntuacion++;
           if(puntuacion == LadrillosFila*LadrillosColumna){
-            alert("ENHORABUENA!! HAS GANADO!! :)");
+            alert("#1 VICTORY ROYALE");
             document.location.reload();  
           }
         }
