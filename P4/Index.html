@@ -11,27 +11,35 @@
 <body>
     <h1> · Filtrado de imágenes · </h1>
     
-    <canvas id="canvas"></canvas>
-    <img src="fortnite.jpg" id="imagesrc">
-
-    <br>
-    <button id="colores"> · Filtro colores ·</button>
-    <button id="gris"> · Filtro gris ·</button>
-    <br>
-    <div id="rangos">
-
-    <p>Establece el umbral de rojo:</p>
-    <input type="range" id="deslizador_rojo" min="0" max="255" value="255"/>
-    <p id="range_value_rojo">00</p>
-
-    <p>Establece el umbral de azul:</p>
-    <input type="range" id="deslizador_azul" min="0" max="255" value="255"/>
-    <p id="range_value_azul">00</p>
-
-    <p>Establece el umbral de verde:</p>
-    <input type="range" id="deslizador_verde" min="0" max="255" value="255"/>
-    <p id="range_value_verde">00</p>
+    <div id="Imagenes">
+        <div id="Original">
+            <img src="fortnite.jpg" id="imagesrc">
+        </div>
+        <div id="Filtrada">
+            <canvas id="canvas" style="width: 40%;"></canvas>
+        </div>
+        <div id="Botones">
+            <br>
+                <button id="colores"> · Filtro colores ·</button>
+                <button id="gris"> · Filtro gris ·</button>
+            <br>
+        </div>
+        <div id="rangos">
+            <p>Establece el umbral de rojo:</p>
+            <input type="range" id="deslizador_rojo" min="0" max="255" value="255"/>
+            <p id="range_value_rojo">00</p>
+        
+            <p>Establece el umbral de azul:</p>
+            <input type="range" id="deslizador_azul" min="0" max="255" value="255"/>
+            <p id="range_value_azul">00</p>
+        
+            <p>Establece el umbral de verde:</p>
+            <input type="range" id="deslizador_verde" min="0" max="255" value="255"/>
+            <p id="range_value_verde">00</p>
+            </div>
     </div>
+    
+    
 
 </body>
 </html>
