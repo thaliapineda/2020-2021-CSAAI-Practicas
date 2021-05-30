@@ -144,6 +144,7 @@ function EliminarTrayectoria() {
   DibujarBola();
   DibujarRaqueta();
   Puntuacion();
+  Vidas();
   ColisionLadrillos();
 
 
