@@ -1,3 +1,7 @@
+body{
+    background-color: yellow;
+}
+
 #imagesrc {
     display: block;
     margin: auto;
