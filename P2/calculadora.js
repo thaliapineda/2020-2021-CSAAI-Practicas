@@ -4,11 +4,11 @@ console.log("Ejecutando JS...");
 //-- Elementos de la interfaz de la calculadora
 display = document.getElementById("display")
 igual = document.getElementById("igual")
-limpiar_todo = document.getElementById("limpiar_todo")
-limpiar_anterior = document.getElementById("limpiar_anterior")
+AC = document.getElementById("AC")
+DEL = document.getElementById("DEL")
 
 //-- Números
-let numeros = document.getElementClassName("numero")
+let numeros = document.getElementsByClassName("numero")
 console.log(numeros)
 
 //-- Operaciones
@@ -28,12 +28,12 @@ const ESTADOS = {
 let estados = ESTADOS.INICIO;
 
 //-- Display a 0
-function tecla(boton) {
+function valor(tecla) {
   if(display.innerHTML == "0"){
-    display.innerHTML = boton.value;
+    display.innerHTML = tecla.value;
   }
   else{
-    display.innerHTML += boton.value;
+    display.innerHTML += tecla.value;
   }
 }
 
@@ -57,7 +57,7 @@ igual.onclick = () => {
 }
 
 //-- Borrar el ultimo número de la expresion (C)
-limpiar_anterior.onclick = () => {
+DEL.onclick = () => {
   if (display.innerHTML.length != 1){
     display.innerHTML = display.innerHTML.slice(0,-1);
   } else{
@@ -67,7 +67,7 @@ limpiar_anterior.onclick = () => {
 }
 
 //-- Poner a cero la expresion (AC) - Borrar todo
-clear.onclick = () => {
+AC.onclick = () => {
   display.innerHTML = "0";
   estados = ESTADOS.INICIO;
 }
@@ -96,8 +96,8 @@ function number(num)
 function operador (oper)
 {
   //-- Segun el estado hacemos una cosa u otra
-  if (estados != ESTADOS.ACCION){
+  if (estados != ESTADOS.OPERACION){
     display.innerHTML += oper.value;
-    estados = ESTADOS.ACCION;
+    estados = ESTADOS.OPERACION;
   }
 }
