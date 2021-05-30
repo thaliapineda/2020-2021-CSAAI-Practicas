@@ -35,6 +35,9 @@ for(columnas=0; columnas<LadrillosColumna; columnas++){
   }
 }
 
+//-- Puntuación
+var puntuacion = 0;
+
 //-- Saber que flecha se esta pulsando
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -68,10 +71,22 @@ function ColisionLadrillos(){
         if(x>colision.x && x<colision.x+AnchuraLadrillos && y>colision.y && y<colision.y+AlturaLadrillos){
           dy = -dy;
           colision.status = 0;
+          puntuacion++;
+          if(puntuacion == LadrillosFila*LadrillosColumna){
+            alert("ENHORABUENA!! HAS GANADO!! :)");
+            document.location.reload();  
+          }
         }
       }
     }
   }
+}
+
+//-- Contador de puntuaciones
+function Puntuacion(){
+  ctx.font = "18px Times";
+  ctx.fillStyle = "orange";
+  ctx.fillText("Puntuación: " + puntuacion, 8, 20);
 }
 
 
@@ -118,6 +133,7 @@ function EliminarTrayectoria() {
   DibujarLadrillos();
   DibujarBola();
   DibujarRaqueta();
+  Puntuacion();
   ColisionLadrillos();
 
 
