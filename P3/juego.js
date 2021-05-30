@@ -31,7 +31,7 @@ var ladrillos = [];
 for(columnas=0; columnas<LadrillosColumna; columnas++){
   ladrillos[columnas] = [];
   for(filas=0; filas<LadrillosFila; filas++){
-    ladrillos[columnas][filas] = {x: 0, y: 0};
+    ladrillos[columnas][filas] = {x: 0, y: 0, status: 1};
   }
 }
 
@@ -59,6 +59,21 @@ function keyUpHandler(e) {
   }
 }
 
+//-- Creamos una funcion para detectar los ladrillos
+function ColisionLadrillos(){
+  for(columnas=0; columnas<LadrillosColumna; columnas++){
+    for(filas=0; filas<LadrillosFila; filas++){
+      var colision = ladrillos[columnas][filas];
+      if(colision.status == 1){
+        if(x>colision.x && x<colision.x+AnchuraLadrillos && y>colision.y && y<colision.y+AlturaLadrillos){
+          dy = -dy;
+          colision.status = 0;
+        }
+      }
+    }
+  }
+}
+
 
 //-- Creamos una funcion para dibujar la bola y hacer que se mueva
 function DibujarBola() {
@@ -82,15 +97,17 @@ function DibujarRaqueta(){
 function DibujarLadrillos(){
   for(columnas=0; columnas<LadrillosColumna; columnas++){
     for(filas=0; filas<LadrillosFila; filas++){
-      var ladrillosX = (columnas*(AnchuraLadrillos+PaddingLadrillos))+OffsetIzquierdaLadrillos;
-      var ladrillosY = (filas*(AlturaLadrillos+PaddingLadrillos))+OffsetTopLadrillos;
-      ladrillos[columnas][filas].x = ladrillosX;
-      ladrillos[columnas][filas].y = ladrillosY;
-      ctx.beginPath();
-      ctx.rect(ladrillosX, ladrillosY, AnchuraLadrillos, AlturaLadrillos);
-      ctx.fillStyle = "orange";
-      ctx.fill();
-      ctx.closePath();
+      if(ladrillos[columnas][filas].status == 1){
+        var ladrillosX = (columnas*(AnchuraLadrillos+PaddingLadrillos))+OffsetIzquierdaLadrillos;
+        var ladrillosY = (filas*(AlturaLadrillos+PaddingLadrillos))+OffsetTopLadrillos;
+        ladrillos[columnas][filas].x = ladrillosX;
+        ladrillos[columnas][filas].y = ladrillosY;
+        ctx.beginPath();
+        ctx.rect(ladrillosX, ladrillosY, AnchuraLadrillos, AlturaLadrillos);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+        ctx.closePath();
+      }
     }
   }
 }
@@ -101,6 +118,7 @@ function EliminarTrayectoria() {
   DibujarLadrillos();
   DibujarBola();
   DibujarRaqueta();
+  ColisionLadrillos();
 
 
   if(x + dx > canvas.width-RadioBola || x + dx < RadioBola){
