@@ -69,8 +69,17 @@ function EliminarTrayectoria() {
   if(x + dx > canvas.width-RadioBola || x + dx < RadioBola){
     dx = -dx;
   }
-  if(y + dy > canvas.height-RadioBola || y + dy < RadioBola){
+  if(y + dy < RadioBola){
     dy = -dy;
+  }
+  else if(y + dy > canvas.height-RadioBola){
+    if(x > Raqueta_EjeX && x < Raqueta_EjeX + AnchuraRaqueta){
+      dy = -dy;
+    }
+    else{
+      alert("Game over :(");
+      document.location.reload();
+    }
   }
   if(FlechaDerecha && Raqueta_EjeX < canvas.width-AnchuraRaqueta){
     Raqueta_EjeX += 7;
