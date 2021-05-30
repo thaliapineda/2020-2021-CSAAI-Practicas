@@ -111,10 +111,10 @@ function MoverBola() {
   if(rightPressed && RaquetaX < canvas.width-AnchoRaqueta){
     RaquetaX += 7;
   }
-  else(leftPressed && RaquetaX > 0){
+  else if(leftPressed && RaquetaX > 0){
     RaquetaX -= 7;
   }
-  
+
   x += dx;
   y += dy;
 }
