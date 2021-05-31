@@ -150,14 +150,11 @@ gris.onclick = () => {
   }
 
 //-- Reflejo horizontal
-const horizontal= document.getElementById('reflejo_horizontal');
+const horizontal= document.getElementById('horizontal');
 horizontal.onclick = () => {
-  document.getElementById('rangos').style.display = 'none';
   ctx.drawImage(img, 0,0);
   ctx.translate(2*(img.width)/2,0);
   ctx.scale(-1,1);
   ctx.drawImage(img, 0,0);
 }
-
-
 console.log("Fin...");
