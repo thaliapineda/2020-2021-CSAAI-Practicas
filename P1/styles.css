@@ -42,7 +42,6 @@ p{
     font-size: 15px;
     font-weight: 300;
     background-color: rgba(255, 255, 224, 0.76);
-    
     margin: 0 0 25px;
     overflow: hidden;
     padding: 20px; /* Relleno */
@@ -50,13 +49,9 @@ p{
     -moz-border-radius: 35px 0px 35px 0px;
     -webkit-border-radius: 35px 0px 35px 0px;
     border: 2px solid lightyellow;
-
     width: 20%; height: 420px;
     text-align: center;
-    
     float:right;
-    
-
 }
 
 .perfil{
@@ -76,7 +71,6 @@ p{
 
 
 .Sobre-mi{
-    
         font-family: fantasy;
         color:black;
         font-size: 15px;
@@ -89,12 +83,10 @@ p{
         -moz-border-radius: 35px 0px 35px 0px;
         -webkit-border-radius: 35px 0px 35px 0px;
         border: 2px solid lightyellow;
-
         width: 70%; height: 200px;
 }
 
 .Estudios{
-    
     font-family: fantasy;
     color:black;
     font-size: 15px;
