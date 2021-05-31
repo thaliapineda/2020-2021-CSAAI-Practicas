@@ -30,8 +30,8 @@ img.onload = function () {
 
   //-- Se establece como tamaño del canvas el mismo
   //-- que el de la imagen original
-  canvas.width = img.width;
-  canvas.height = img.height;
+  canvas.width = 990;
+  canvas.height = 556;
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
@@ -40,6 +40,7 @@ img.onload = function () {
   console.log("Imagen lista...");
 };
 
+ctx.drawImage(img, 0, 0);
 
 //-- Funcion de retrollamada del deslizador
 //-- Color rojo
