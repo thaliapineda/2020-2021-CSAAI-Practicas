@@ -17,6 +17,7 @@ var Raqueta_EjeX = (canvas.width-AnchuraRaqueta)/2;
 var FlechaDerecha = false;
 var FlechaIzquierda = false;
 
+
 //-- Ladrillos
 var LadrillosColumna = 9;
 var LadrillosFila = 5;
@@ -57,11 +58,6 @@ function keyDownHandler(e) {
 
 //-- Creamos la funcion tecla levantada
 function keyUpHandler(e) {
-  if(e.keyCode == 32){
-    console.log("Espacio");
-    RadioBola.dx = 3*(Math.random() * 2-1);
-    RadioBola.dy = -3;
-  }
   if(e.keyCode == 39) {
     FlechaDerecha = false;
   }
