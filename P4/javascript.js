@@ -43,6 +43,7 @@ img.onload = function () {
 ctx.drawImage(img, 0, 0);
 
 //-- Funcion de retrollamada del deslizador
+function deslizador() {
 //-- Color rojo
 deslizador_rojo.oninput = () => {
   //-- Mostrar el nuevo valor del deslizador
@@ -124,6 +125,7 @@ deslizador_verde.oninput = () => {
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
 }
+}
 
 //-- Boton para colores
 colores.onclick = () => {
@@ -131,9 +133,8 @@ colores.onclick = () => {
   deslizador_rojo.value =  255;
   deslizador_azul.value = 255;
   deslizador_verde.value = 255;
-  document.getElementById('deslizador_rojo').style.display = 'block';
-  document.getElementById('deslizador_azul').style.display = 'block';
-  document.getElementById('deslizador_verde').style.display = 'block';
+  deslizador();
+  document.getElementById('deslizador').style.display = 'block';
 }
 
 //-- Filtrado gris
