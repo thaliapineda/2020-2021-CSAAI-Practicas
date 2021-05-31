@@ -43,7 +43,6 @@ img.onload = function () {
 ctx.drawImage(img, 0, 0);
 
 //-- Funcion de retrollamada del deslizador
-function deslizador() {
 //-- Color rojo
 deslizador_rojo.oninput = () => {
   //-- Mostrar el nuevo valor del deslizador
@@ -125,17 +124,6 @@ deslizador_verde.oninput = () => {
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
 }
-}
-
-//-- Boton para colores
-colores.onclick = () => {
-  ctx.drawImage(img, 0, 0);
-  deslizador_rojo.value =  255;
-  deslizador_azul.value = 255;
-  deslizador_verde.value = 255;
-  deslizador();
-  document.getElementById('deslizador').style.display = 'block';
-}
 
 //-- Filtrado gris
 gris.onclick = () => {
@@ -160,5 +148,16 @@ gris.onclick = () => {
     //-- Poner la imagen modificada en el canvas
     ctx.putImageData(imgData, 0, 0);
   }
+
+//-- Reflejo horizontal
+const horizontal= document.getElementById('reflejo_horizontal');
+horizontal.onclick = () => {
+  document.getElementById('rangos').style.display = 'none';
+  ctx.drawImage(img, 0,0);
+  ctx.translate(2*(img.width)/2,0);
+  ctx.scale(-1,1);
+  ctx.drawImage(img, 0,0);
+}
+
 
 console.log("Fin...");
