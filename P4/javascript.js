@@ -125,6 +125,17 @@ deslizador_verde.oninput = () => {
   ctx.putImageData(imgData, 0, 0);
 }
 
+//-- Boton para colores
+colores.onclick = () => {
+  ctx.drawImage(img, 0, 0);
+  deslizador_rojo.value =  255;
+  deslizador_azul.value = 255;
+  deslizador_verde.value = 255;
+  document.getElementById('deslizador_rojo').style.display = 'block';
+  document.getElementById('deslizador_azul').style.display = 'block';
+  document.getElementById('deslizador_verde').style.display = 'block';
+}
+
 //-- Filtrado gris
 gris.onclick = () => {
 
